@@ -5,11 +5,11 @@
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
-  z-index: -1;
   object-fit: cover;
+  z-index: -1;
 }
 
-/* Page content styling */
+/* General page styling */
 body {
   margin: 0;
   padding: 0;
@@ -20,17 +20,20 @@ body {
   background: transparent;
 }
 
+/* Container holds all visible content above the video */
 .container {
   padding: 40px 20px;
   position: relative;
   z-index: 1;
 }
 
+/* Logo styling */
 .logo {
   width: 120px;
   margin-bottom: 30px;
 }
 
+/* Main title (IRON CURTAIN) */
 h1 {
   font-size: 2.5em;
   color: #000000;
@@ -38,27 +41,31 @@ h1 {
   margin: 0.2em 0;
 }
 
+/* Subtitle (dremmz, jon-d) */
 h2 {
   margin: 0.5em 0;
 }
 
+/* Tagline (preparing stock...) */
 .tagline {
   font-style: italic;
   margin-bottom: 40px;
 }
 
+/* Trailer video container */
 .video {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
-video {
+.video video {
   width: 100%;
   max-width: 640px;
   border: 1px solid #000000;
 }
 
+/* Image/media gallery */
 .media {
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +80,7 @@ video {
   border: 1px solid #000000;
 }
 
+/* Bonafide streaming links */
 .links ul {
   list-style: none;
   padding: 0;
@@ -91,4 +99,3 @@ a {
 a:hover {
   border-bottom: 1px solid #555555;
 }
-
