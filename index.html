@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <title>IRC Records</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Terminal cursor blink */
+    .cursor {
+      display: inline-block;
+      font-weight: normal;
+      animation: blink 1s infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -18,7 +32,7 @@
 
     <h1>IRON CURTAIN</h1>
     <h2>dremmz, jon-d</h2>
-    <p id="inventory-status" class="tagline">preparing stock...</p>
+    <p id="inventory-status" class="tagline">preparing stock<span class="cursor">_</span></p>
 
     <div class="media">
       <img src="IMG_3482.jpg" alt="Teaser Image 1" />
@@ -39,25 +53,26 @@
   <!-- Rotating Loading Phrases -->
   <script>
     const phrases = [
-      "preparing stock...",
-      "loading...",
-      "uploading...",
-      "packaging...",
-      "arriving soon...",
-      "awaiting clearance...",
-      "inventory update pending...",
-      "initializing...",
-      "booting system...",
-      "syncing...",
-      "pending release...",
-      "stocking shelves...",
-      "queued for rollout..."
+      "preparing stock",
+      "loading",
+      "uploading",
+      "packaging",
+      "arriving soon",
+      "awaiting clearance",
+      "inventory update pending",
+      "initializing",
+      "booting system",
+      "syncing",
+      "pending release",
+      "stocking shelves",
+      "queued for rollout"
     ];
 
     const inventoryStatus = document.getElementById("inventory-status");
+
     function rotatePhrase() {
       const random = Math.floor(Math.random() * phrases.length);
-      inventoryStatus.innerText = phrases[random];
+      inventoryStatus.innerHTML = phrases[random] + '<span class="cursor">_</span>';
     }
 
     rotatePhrase(); // Initial
