@@ -11,6 +11,7 @@
       animation: blink 1s infinite;
       opacity: 0.5;
     }
+
     @keyframes blink {
       0%, 100% { opacity: 0.5; }
       50% { opacity: 0; }
@@ -33,15 +34,12 @@
     <h2>dremmz, jon-d</h2>
     <p id="inventory-status" class="tagline">preparing stock<span class="cursor">_</span></p>
 
-    <!-- Inventory Manifest -->
-    <table class="manifest">
-      <tr><td>file_002</td><td>bonafide.mp3</td><td>released</td></tr>
-      <tr><td>file_008</td><td>propaganda.wav</td><td>ready</td></tr>
-      <tr><td>file_0017</td><td>albumcover.jpg</td><td>final</td></tr>
-      <tr><td>file_0012</td><td>scottswayy_acapella.mp3</td><td>mixed</td></tr>
-      <tr><td>file_0014</td><td>lucaa_verse.wav</td><td>pending</td></tr>
-      <tr><td>file_0015</td><td>ea.ouroboros_chorus.mp3</td><td>mastered</td></tr>
-    </table>
+    <!-- Teaser Images -->
+    <div class="media">
+      <img src="IMG_3482.jpg" alt="Teaser Image 1" />
+      <img src="A6E9C406-415A-4D2B-A395-76B4C50926B9.jpg" alt="Teaser Image 2" />
+      <img src="58098521-406A-444B-ADF6-C2EC229CEF6A.jpg" alt="Teaser Image 3" />
+    </div>
 
     <!-- Bonafide Links -->
     <div class="links">
@@ -66,6 +64,16 @@
       <p id="terminal-output"></p>
     </div>
   </div>
+
+  <!-- Inventory Manifest (bottom of page) -->
+  <table class="manifest">
+    <tr><td>file_002</td><td>bonafide.mp3</td><td>released</td></tr>
+    <tr><td>file_008</td><td>propaganda.wav</td><td>ready</td></tr>
+    <tr><td>file_0017</td><td>albumcover.jpg</td><td>final</td></tr>
+    <tr><td>file_0012</td><td>scottswayy_acapella.mp3</td><td>mixed</td></tr>
+    <tr><td>file_0014</td><td>lucaa_verse.wav</td><td>pending</td></tr>
+    <tr><td>file_0015</td><td>ea.ouroboros_chorus.mp3</td><td>mastered</td></tr>
+  </table>
 
   <!-- Scripts -->
   <script>
