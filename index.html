@@ -11,7 +11,6 @@
       animation: blink 1s infinite;
       opacity: 0.5;
     }
-
     @keyframes blink {
       0%, 100% { opacity: 0.5; }
       50% { opacity: 0; }
@@ -20,25 +19,37 @@
 </head>
 <body>
 
-  <!-- Fullscreen Background Video -->
+  <!-- Background Video -->
   <video autoplay muted loop playsinline id="bg-video">
     <source src="background.mp4" type="video/mp4" />
-    your browser does not support the video tag.
   </video>
 
   <div class="container">
+    <!-- Logo -->
     <img src="A3A14EFD-C4E6-497E-BF3F-9B1B860B04CA.PNG" class="logo" alt="irc logo" />
 
+    <!-- Title -->
     <h1>IRON CURTAIN</h1>
     <h2>dremmz, jon-d</h2>
     <p id="inventory-status" class="tagline">preparing stock<span class="cursor">_</span></p>
 
-    <div class="media">
-      <img src="IMG_3482.jpg" alt="Teaser Image 1" />
-      <img src="A6E9C406-415A-4D2B-A395-76B4C50926B9.jpg" alt="Teaser Image 2" />
-      <img src="58098521-406A-444B-ADF6-C2EC229CEF6A.jpg" alt="Teaser Image 3" />
+    <!-- Inventory Manifest -->
+    <table class="manifest">
+      <tr><td>file_002</td><td>bonafide.mp3</td><td>released</td></tr>
+      <tr><td>file_008</td><td>propaganda.wav</td><td>ready</td></tr>
+      <tr><td>file_0017</td><td>albumcover.jpg</td><td>final</td></tr>
+      <tr><td>file_0012</td><td>scottswayy_acapella.mp3</td><td>mixed</td></tr>
+      <tr><td>file_0014</td><td>lucaa_verse.wav</td><td>pending</td></tr>
+      <tr><td>file_0015</td><td>ea.ouroboros_chorus.mp3</td><td>mastered</td></tr>
+    </table>
+
+    <!-- Glitched Image -->
+    <div class="glitch">
+      <img src="refposter0027.jpg" alt="corrupted" />
+      <p>refposter0027.jpg (corrupted)</p>
     </div>
 
+    <!-- Bonafide Links -->
     <div class="links">
       <p>stream bonafide:</p>
       <ul>
@@ -48,10 +59,23 @@
         <li><a href="https://genius.com/Dremmz-and-jon-d-bonafide-lyrics" target="_blank">lyrics</a></li>
       </ul>
     </div>
+
+    <!-- Fake Login -->
+    <div class="login-box">
+      <input id="login-input" type="password" placeholder="access code:" />
+      <p id="login-response" class="login-response"></p>
+    </div>
+
+    <!-- Terminal Input -->
+    <div class="terminal-box">
+      <input id="terminal-input" placeholder="type command" />
+      <p id="terminal-output"></p>
+    </div>
   </div>
 
-  <!-- Rotating Loading Phrases -->
+  <!-- Scripts -->
   <script>
+    // Rotating inventory phrases
     const phrases = [
       "preparing stock",
       "loading",
@@ -67,16 +91,42 @@
       "stocking shelves",
       "queued for rollout"
     ];
-
     const inventoryStatus = document.getElementById("inventory-status");
-
     function rotatePhrase() {
       const random = Math.floor(Math.random() * phrases.length);
       inventoryStatus.innerHTML = phrases[random] + '<span class="cursor">_</span>';
     }
+    rotatePhrase();
+    setInterval(rotatePhrase, 5000);
 
-    rotatePhrase(); // Initial
-    setInterval(rotatePhrase, 5000); // Update every 5 seconds
+    // Fake login rejections
+    const loginInput = document.getElementById("login-input");
+    const loginResponse = document.getElementById("login-response");
+    const rejectionPhrases = [
+      "give your mom a hug",
+      "buy your mom flowers",
+      "go ask your mom"
+    ];
+    loginInput.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") {
+        const random = rejectionPhrases[Math.floor(Math.random() * rejectionPhrases.length)];
+        loginResponse.innerText = random;
+      }
+    });
+
+    // Terminal command logic
+    const terminalInput = document.getElementById("terminal-input");
+    const terminalOutput = document.getElementById("terminal-output");
+    terminalInput.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") {
+        const command = terminalInput.value.trim().toLowerCase();
+        if (command === "cover ur eyes") {
+          terminalOutput.innerText = ">> redirect denied: file locked by operator";
+        } else {
+          terminalOutput.innerText = ">> error: invalid command";
+        }
+      }
+    });
   </script>
 
 </body>
