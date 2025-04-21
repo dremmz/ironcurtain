@@ -1,15 +1,29 @@
+/* Fullscreen looping video background */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Page content styling */
 body {
   margin: 0;
   padding: 0;
-  background-color: #6ec1e4;
   font-family: monospace;
   color: #000000;
   text-align: center;
   text-transform: lowercase;
+  background: transparent;
 }
 
 .container {
   padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -75,4 +89,6 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px
+  border-bottom: 1px solid #555555;
+}
+
