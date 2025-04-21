@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <!-- FULLSCREEN BACKGROUND VIDEO -->
+  <!-- Fullscreen Background Video -->
   <video autoplay muted loop playsinline id="bg-video">
     <source src="background.mp4" type="video/mp4" />
     your browser does not support the video tag.
@@ -18,7 +18,7 @@
 
     <h1>IRON CURTAIN</h1>
     <h2>dremmz, jon-d</h2>
-    <p class="tagline">preparing stock...</p>
+    <p id="inventory-status" class="tagline">preparing stock...</p>
 
     <div class="media">
       <img src="IMG_3482.jpg" alt="Teaser Image 1" />
@@ -35,6 +35,34 @@
       </ul>
     </div>
   </div>
+
+  <!-- Rotating Loading Phrases -->
+  <script>
+    const phrases = [
+      "preparing stock...",
+      "loading...",
+      "uploading...",
+      "packaging...",
+      "arriving soon...",
+      "awaiting clearance...",
+      "inventory update pending...",
+      "initializing...",
+      "booting system...",
+      "syncing...",
+      "pending release...",
+      "stocking shelves...",
+      "queued for rollout..."
+    ];
+
+    const inventoryStatus = document.getElementById("inventory-status");
+    function rotatePhrase() {
+      const random = Math.floor(Math.random() * phrases.length);
+      inventoryStatus.innerText = phrases[random];
+    }
+
+    rotatePhrase(); // Initial
+    setInterval(rotatePhrase, 5000); // Update every 5 seconds
+  </script>
 
 </body>
 </html>
